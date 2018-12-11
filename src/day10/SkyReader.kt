@@ -114,8 +114,8 @@ class SkyReader {
         val minY = points.minBy { point -> point.y }!!.y
         val minX = points.minBy { point -> point.x }!!.x
 
-        val yOffset = if (minY < 0) minY.absoluteValue else 0
-        val xOffset = if (minX < 0) minX.absoluteValue else 0
+        val yOffset = minY*-1
+        val xOffset = minX*-1
 
         val grid: Array<Array<Char>> = Array(maxY + yOffset) {
             Array(maxX + xOffset) {
